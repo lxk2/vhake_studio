@@ -9,7 +9,7 @@ const routes = [
     path: '/',
     name: 'home',
     meta: {
-      title: '晋托建筑'
+      title: '晋拓建筑'
     },
     component: Home
   },
