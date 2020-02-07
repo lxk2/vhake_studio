@@ -21,22 +21,22 @@
           </div> -->
         </div>
         <div class="header-zizhi">
-          <div class="zige-cer" style="font-weight: bold">运营总监</div>
-          <div class="tel-a" style="font-weight: bold">
+          <div class="zige-cer">运营总监</div>
+          <div class="tel-a">
             <span>黄脞东</span>
             <a tel="15018489060" class="tel">15018489060</a>
           </div>
-          <div class="zige-cer" style="font-weight: bold">客服经理</div>
-          <div class="tel-a" style="font-weight: bold">
+          <div class="zige-cer">客服经理</div>
+          <div class="tel-a">
             <span>温少梅</span>
             <a tel="18023473403" class="tel">18023473403</a>
           </div>
-          <div class="zige-cer" style="font-weight: bold">客服值班经理电话</div>
-          <div class="tel-a" style="font-weight: bold">
+          <div class="zige-cer">客服值班经理电话</div>
+          <div class="tel-a">
             <a style="margin-left: 0" tel="1802812242" class="tel">1802812242</a>
           </div>
-          <div class="zige-cer" style="font-weight: bold">值班固话</div>
-          <div class="tel-a" style="font-weight: bold">
+          <div class="zige-cer">值班固话</div>
+          <div class="tel-a">
             <a style="margin-left: 0" tel="020-31951304" class="tel">020-31951304</a>
           </div>
 
