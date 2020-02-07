@@ -62,7 +62,7 @@
       :text="notice"
       :scrollable="true"
     ></van-notice-bar>
-    <div class="label-title">
+    <!-- <div class="label-title">
       <div class="child_div">
         <img src="@/assets/icon/02.png" alt="" class="img">
         <label class="line_title">公司简介</label>
@@ -83,7 +83,7 @@
           <div class="font-bot">www.jtlw.com.cn</div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="label-title">
       <div class="child_div">
