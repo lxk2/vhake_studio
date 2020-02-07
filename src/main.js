@@ -9,6 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'vant/lib/index.css'
 import './styles/reset.styl' // 引入全局样式
 import request from './utils/request'
+import { Dialog } from 'vant'
+
+Vue.use(Dialog)
 
 // 简单配置
 NProgress.inc(0.2)
