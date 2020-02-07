@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-import {
-  Loading
-} from 'element-ui'
+// import {
+//   Loading
+// } from 'element-ui'
 
 import {
   Notify
@@ -12,7 +12,7 @@ import {
   BASE_URL
 } from './statusCode'
 
-let loadingInstance = null
+// let loadingInstance = null
 
 // 创建axios实例
 const service = axios.create({
@@ -27,9 +27,9 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     // do something before request is sent
-    loadingInstance = Loading.service({
-      lock: true
-    })
+    // loadingInstance = Loading.service({
+    //   lock: true
+    // })
     // let token = store.getters.token;
     // if (token) {
     //   config.headers['X-Token'] = token;
@@ -47,13 +47,13 @@ service.interceptors.request.use(
 // 添加相应拦截器
 service.interceptors.response.use(
   response => {
-    loadingInstance.close()
+    // loadingInstance.close()
     const res = response.data
     // do something ...
     return res
   },
   error => {
-    loadingInstance.close()
+    // loadingInstance.close()
     // eslint-disable-next-line
     console.log('err' + error); // for debug
     Notify({

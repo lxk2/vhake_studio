@@ -6,18 +6,13 @@ export default {
   data () {
     return {
       formData: {
-        projectName: '',
-        reservationPrice: '',
-        applyPrice: '',
         name: '',
-        mobile: ''
+        email: '',
+        mobile: '',
+        content: ''
       },
       loading: false
     }
-  },
-  component: {
-    NoticeBar,
-    Field
   },
   methods: {
     async submitForm () {
@@ -28,7 +23,7 @@ export default {
         return false
       }
       this.loading = true
-      const res = await this.$http.post('v1.home/applyProject', this.formData)
+      const res = await this.$http.post('v1.home/feedback', this.formData)
       this.loading = false
       this.$dialog.alert({
         message: res.msg
@@ -42,11 +37,10 @@ export default {
     },
     resetForm () {
       this.formData = {
-        projectName: '',
-        reservationPrice: '',
-        applyPrice: '',
         name: '',
-        mobile: ''
+        email: '',
+        mobile: '',
+        content: ''
       }
     }
   },
@@ -55,5 +49,9 @@ export default {
   },
   mounted () {
     this.loading = false
+  },
+  components: {
+    NoticeBar,
+    Field
   }
 }

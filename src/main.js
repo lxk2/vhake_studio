@@ -8,7 +8,7 @@ import 'nprogress/nprogress.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'vant/lib/index.css'
 import './styles/reset.styl' // 引入全局样式
-import * as statusCode from './utils/statusCode'
+import request from './utils/request'
 
 // 简单配置
 NProgress.inc(0.2)
@@ -16,6 +16,7 @@ NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
 
 router.beforeEach(async (to, from, next) => {
   NProgress.start()
+  document.getElementById('title').innerText = to.meta.title
   next()
 })
 
@@ -26,7 +27,7 @@ router.afterEach(async (to, from) => {
 
 Vue.config.productionTip = false
 
-Vue.prototype.$statusCode = statusCode
+Vue.prototype.$http = request
 
 new Vue({
   router,
