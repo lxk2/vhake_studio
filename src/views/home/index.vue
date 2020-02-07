@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-main">
     <div class="header-card">
       <div class="person-ifo">
         <!-- <div class="org">
@@ -12,8 +12,13 @@
       </div>
       <div class="card">
         <div class="header-img-box">
-          <div>
-            <img class="img" src="@/assets/icon/logo.png" alt="">
+          <div @click="handleImagePreview">
+            <van-image
+              class="img"
+              src="https://images.http.org.cn/zizhi.png"
+              fit="contain"
+            />
+            <!-- <img  class="img" src="@/assets/icon/zizhi.png" alt=""> -->
           </div>
           <!-- <div class="flex tip-under-header">
             <span class="EMPE_NM">唐宇杰</span>
@@ -34,7 +39,7 @@
           <div class="zige-cer">客服值班经理电话</div>
           <div class="tel-a">
             <span style="opacity: 0">温少梅</span>
-            <a tel="1802812242" class="tel">1802812242</a>
+            <a tel="1802812242" class="tel">18028512242</a>
           </div>
           <div class="zige-cer">值班固话</div>
           <div class="tel-a">

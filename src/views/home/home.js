@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import { NoticeBar, ActionSheet } from 'vant'
+import { NoticeBar, ActionSheet, Image, ImagePreview } from 'vant'
 
-Vue.use(NoticeBar).use(ActionSheet)
+Vue.use(NoticeBar).use(ActionSheet).use(Image).use(ImagePreview)
 export default {
   data () {
     return {
@@ -27,7 +27,8 @@ export default {
   },
   components: {
     NoticeBar,
-    ActionSheet
+    ActionSheet,
+    Image
   },
   methods: {
     onSelect (e) {
@@ -46,6 +47,11 @@ export default {
     },
     toJt () {
       window.location.href = 'http://www.jtlw.com.cn'
+    },
+    handleImagePreview () {
+      ImagePreview([
+        'https://images.http.org.cn/zizhi.png'
+      ])
     }
   },
   created () {

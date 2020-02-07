@@ -10,6 +10,6 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 .myNoticeBar
-  margin-top: 28px
+  margin-top: 30px
   background-color transparent!important
 </style>
