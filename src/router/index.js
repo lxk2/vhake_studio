@@ -49,6 +49,14 @@ const routes = [
     component: () => import('../views/otherService/index.vue')
   },
   {
+    path: '/otherService2',
+    name: 'otherService2',
+    meta: {
+      title: '其他服务'
+    },
+    component: () => import('../views/otherService2/index.vue')
+  },
+  {
     path: '/feedback',
     name: 'feedback',
     meta: {

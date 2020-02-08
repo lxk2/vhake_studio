@@ -51,7 +51,7 @@ export default {
           break
         case 3:
           this.$router.push({
-            path: '/otherService'
+            path: '/otherService2'
           })
           break
         default:
