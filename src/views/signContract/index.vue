@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-notice-bar wrapable :scrollable="false" mode="closeable">
-      请录入合同甲方单位名称，项目名称，合同金额等填写相关信息提交即可
+      请录入合同甲方单位名称，项目名称，合同金额等相关信息提交即可
       <br>
       如有任何操作问题可随时联系拨打客服电话或联系您的业务经办人，期待您的体验及建议，晋拓将一如既往地提供优质高效专业的服务！
     </van-notice-bar>
