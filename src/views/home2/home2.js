@@ -74,10 +74,10 @@ export default {
         this.showFlag = true
         sessionStorage.setItem('flag', 1)
         clearTimeout(timer)
-        const t = setTimeout(() => {
-          this.showFlag = false
-          clearTimeout(t)
-        }, 3000)
+        // const t = setTimeout(() => {
+        //   this.showFlag = false
+        //   clearTimeout(t)
+        // }, 3000)
       }, 500)
     }
   },
