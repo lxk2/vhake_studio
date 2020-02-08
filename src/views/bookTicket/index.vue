@@ -7,7 +7,9 @@
       如有任何操作问题可随时联系拨打客服电话或联系您的业务经办人，期待您的体验及建议，晋拓将一如既往地提供优质高效专业的服务！
     </van-notice-bar>
     <van-field label-width="110" v-model="formData.projectName" label="项目名称" placeholder="请输入项目名称" ></van-field>
-    <van-field label-width="110" v-model="formData.price" type="number" label="工资金额" placeholder="请输入工资金额" ></van-field>
+    <van-field label-width="110" v-model="formData.price" type="number" label="工资金额" placeholder="请输入工资金额" >
+      <span slot="button">元</span>
+    </van-field>
     <van-cell title="税率" :value="formData.taxRate" @click="showPopup = true;showPopup2 = false" is-link />
     <van-cell title="票务类型" :value="formData.ticketType" @click="showPopup2 = true;showPopup = false" is-link />
     <van-cell title="预计回款时间" :value="formData.backTime" @click="showFlag = true;" is-link />
