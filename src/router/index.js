@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/home/index.vue'
+import Home from '../views/home2/index.vue'
 
 Vue.use(VueRouter)
 
@@ -9,7 +9,7 @@ const routes = [
     path: '/',
     name: 'home',
     meta: {
-      title: '晋拓建筑'
+      title: '广州市晋拓建筑工程有限公司'
     },
     component: Home
   },
@@ -55,6 +55,14 @@ const routes = [
       title: '投诉与建议'
     },
     component: () => import('../views/feedback/index.vue')
+  },
+  {
+    path: '/qualification',
+    name: 'qualification',
+    meta: {
+      title: '公司资质'
+    },
+    component: () => import('../views/qualification/index.vue')
   }
 ]
 

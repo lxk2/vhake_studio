@@ -12,4 +12,12 @@
 .myNoticeBar
   margin-top: 30px
   background-color transparent!important
+
+.myPop
+  background: transparent
+
+.van-divider::after, .van-divider::before {
+  border-width: 2px 0 0!important;
+}
+
 </style>
