@@ -45,7 +45,7 @@
       // background: 'transparent'
     }">
       <div class="wenan">
-        <img class="img" v-lazy="require('@/assets/new/shuoming.png')" src="" alt="">
+        <img class="img" src="@/assets/new/shuoming.png" alt="">
       </div>
     </van-popup>
 

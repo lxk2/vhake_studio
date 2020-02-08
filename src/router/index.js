@@ -63,6 +63,14 @@ const routes = [
       title: '公司资质'
     },
     component: () => import('../views/qualification/index.vue')
+  },
+  {
+    path: '/taxAdvice',
+    name: 'taxAdvice',
+    meta: {
+      title: '税务咨询'
+    },
+    component: () => import('../views/taxAdvice/index.vue')
   }
 ]
 

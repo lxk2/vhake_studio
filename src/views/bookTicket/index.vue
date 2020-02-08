@@ -1,5 +1,10 @@
 <template>
   <div>
+    <van-notice-bar wrapable :scrollable="false" mode="closeable">
+      申请款项请点“约款”，在建项目票务请点击“票务”，填写相关信息提交即可
+      <br>
+      如有任何操作问题可随时联系拨打客服电话或联系您的业务经办人，期待您的体验及建议，晋拓将一如既往地提供优质高效专业的服务！
+    </van-notice-bar>
     <van-field label-width="110" v-model="formData.projectName" label="项目名称" placeholder="请输入项目名称" ></van-field>
     <van-field label-width="110" v-model="formData.price" type="number" label="工资金额" placeholder="请输入工资金额" ></van-field>
     <van-cell title="税率" :value="formData.taxRate" @click="showPopup = true;showPopup2 = false" is-link />

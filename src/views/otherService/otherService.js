@@ -1,3 +1,7 @@
+import Vue from 'vue'
+import { NoticeBar } from 'vant'
+
+Vue.use(NoticeBar)
 export default {
   data () {
     return {
@@ -26,6 +30,6 @@ export default {
 
   },
   components: {
-
+    NoticeBar
   }
 }

@@ -1,5 +1,10 @@
 <template>
   <div>
+    <van-notice-bar wrapable :scrollable="false" mode="closeable">
+      如有服务建议与意见反馈，可填写相关信息提交
+      <br />
+      如有任何操作问题可随时联系拨打客服电话或联系您的业务经办人，期待您的体验及建议，晋拓将一如既往地提供优质高效专业的服务！
+    </van-notice-bar>
     <van-field label-width="90" v-model="formData.name" required label="姓名" placeholder="请输入联系姓名" ></van-field>
     <van-field label-width="90" v-model="formData.content" required type="textarea" :autosize="{
       minHeight: 100

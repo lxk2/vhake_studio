@@ -45,6 +45,9 @@ export default {
           })
           break
         case 2:
+          this.$router.push({
+            path: '/taxAdvice'
+          })
           break
         case 3:
           this.$router.push({
