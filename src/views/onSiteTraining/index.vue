@@ -1,42 +1,32 @@
 <template>
   <div>
     <van-notice-bar wrapable :scrollable="false" mode="closeable">
-      请根据下方表格录入资料类型、资料内容、盖章份数、联系方式信息，提交即可
-      <br />
-      提交资料，请添加客服QQ：2971480585
+      请根据下方表格录入安全培训、安全警示教育、预计培训时间、具体时间、联系方式信息，提交即可
       <br />
       如有任何操作问题可随时联系拨打客服电话或联系您的业务经办人，期待您的体验及建议，晋拓将一如既往地提供优质高效专业的服务！
     </van-notice-bar>
-    <van-cell
-      title="资料类型"
-      :value="formData.type"
-      @click="showPopup = true"
-      is-link
-    />
     <van-field
       label-width="90"
-      v-if="formData.type === '其他资料'"
-      v-model="formData.materialName"
-      label="资料名称"
-      placeholder="请输入资料名称"
-    ></van-field>
-    <van-field
-      label-width="90"
-      v-model="formData.content"
+      v-model="formData.safetyTraining"
       type="textarea"
       :autosize="{
         minHeight: 100
       }"
-      label="资料内容"
-      placeholder="请输入资料内容"
+      label="安全培训"
+      placeholder="请输入安全培训"
     ></van-field>
     <van-field
       label-width="90"
-      v-model="formData.servings"
-      type="digit"
-      label="盖章份数"
-      placeholder="请输入盖章份数"
+      v-model="formData.warningEducation"
+      type="textarea"
+      :autosize="{
+        minHeight: 100
+      }"
+      label="安全警示教育"
+      placeholder="请输入安全警示教育"
     ></van-field>
+    <van-cell title="预计培训时间" :value="formData.trainingTime" @click="showFlag = true;" is-link />
+    <van-cell title="具体时间" :value="formData.specificTime" @click="showPopup = true" is-link />
     <van-field
       label-width="90"
       v-model="formData.name"
@@ -57,12 +47,14 @@
     <van-popup v-model="showPopup" position="bottom">
       <van-picker
         value-key="label"
-        title="选择资料类型"
-        :columns="typeList"
+        title="选择具体时间"
+        :columns="specificTimeList"
         @confirm="onPickerConfirm"
         :show-toolbar="true"
       />
     </van-popup>
+
+    <van-calendar title="选择预计培训时间" v-model="showFlag" @confirm="onConfirm" />
   </div>
 </template>
 

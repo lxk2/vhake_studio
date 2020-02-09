@@ -5,18 +5,27 @@ Vue.use(Tab).use(Tabs).use(Divider).use(ImagePreview).use(Image)
 export default {
   data () {
     return {
-      active: 3
+      active: 3,
+      picList: []
     }
   },
   methods: {
-    handleImagePreview () {
+    handleImagePreview (pic) {
       ImagePreview([
-        require('@/assets/icon/zizhi.png')
+        pic
       ])
+    },
+    async getPageList () {
+      const res = await this.$http.get('v1.home/getQualification')
+      if (res.code === 1) {
+        this.picList = res.data
+      } else {
+        this.picList = []
+      }
     }
   },
   created () {
-
+    this.getPageList()
   },
   mounted () {
 

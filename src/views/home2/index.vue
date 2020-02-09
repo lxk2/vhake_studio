@@ -46,21 +46,6 @@
         @click="
           () => {
             $router.push({
-              path: '/feedback'
-            });
-          }
-        "
-        v-lazy="require('@/assets/new/05.png')"
-        class="img"
-        src=""
-        alt=""
-      />
-    </div>
-    <div class="block">
-      <img
-        @click="
-          () => {
-            $router.push({
               path: '/onSiteTraining'
             });
           }
@@ -71,6 +56,22 @@
         alt=""
       />
     </div>
+    <div class="block">
+      <img
+        @click="
+          () => {
+            $router.push({
+              path: '/feedback'
+            });
+          }
+        "
+        v-lazy="require('@/assets/new/05.png')"
+        class="img"
+        src=""
+        alt=""
+      />
+    </div>
+
     <div class="mobile-contract">
       <img
         v-lazy="require('@/assets/new/lianxi.png')"

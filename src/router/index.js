@@ -103,6 +103,14 @@ const routes = [
       title: '更多了解'
     },
     component: () => import('../views/learnMore/index.vue')
+  },
+  {
+    path: '/onSiteTraining',
+    name: 'onSiteTraining',
+    meta: {
+      title: '驻场培训'
+    },
+    component: () => import('../views/onSiteTraining/index.vue')
   }
 ]
 
