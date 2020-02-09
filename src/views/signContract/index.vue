@@ -61,6 +61,12 @@
     />
     <van-field
       label-width="110"
+      v-model="formData.followUpName"
+      label="跟进业务员姓名"
+      placeholder="请输入跟进业务员姓名"
+    ></van-field>
+    <van-field
+      label-width="110"
       v-model="formData.name"
       label="姓名"
       placeholder="请输入签约人姓名"

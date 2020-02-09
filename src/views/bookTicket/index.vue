@@ -13,6 +13,7 @@
     <van-cell title="税率" :value="formData.taxRate" @click="showPopup = true;showPopup2 = false" is-link />
     <van-cell title="票务类型" :value="formData.ticketType" @click="showPopup2 = true;showPopup = false" is-link />
     <van-cell title="预计回款时间" :value="formData.backTime" @click="showFlag = true;" is-link />
+    <van-field label-width="110" v-model="formData.followUpName" label="跟进业务员姓名" placeholder="请输入跟进业务员姓名" ></van-field>
     <van-field label-width="110" v-model="formData.name" label="姓名" placeholder="请输入签约人姓名" ></van-field>
     <van-field label-width="110" v-model="formData.mobile" type="tel" label="联系方式" placeholder="请输入签约人联系方式" ></van-field>
     <div class="open-ccb-box">

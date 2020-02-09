@@ -1,31 +1,41 @@
 import Vue from 'vue'
-import { Tab, Tabs, Divider, ImagePreview, Image } from 'vant'
+import { NoticeBar, Tab, Tabs } from 'vant'
 
-Vue.use(Tab).use(Tabs).use(Divider).use(ImagePreview).use(Image)
+Vue.use(NoticeBar).use(Tab).use(Tabs)
 export default {
   data () {
     return {
-      active: 3
+      netData: {},
+      active: 1
     }
   },
   methods: {
-    handleImagePreview () {
-      ImagePreview([
-        require('@/assets/icon/zizhi.png')
-      ])
+    async getPageData () {
+      const res = await this.$http.post('v1.home/richText', {
+        id: 3
+      })
+      if (res.code === 1) {
+        this.netData = res.data
+      } else {
+        this.$dialog.alert({
+          message: res.msg
+        })
+          .then(_ => {
+            this.$router.go(-1)
+          })
+      }
     }
   },
   created () {
-
+    this.getPageData()
   },
   mounted () {
 
   },
   components: {
+    NoticeBar,
     Tab,
-    Tabs,
-    Divider,
-    Image
+    Tabs
   },
   watch: {
     active (val) {
@@ -36,9 +46,6 @@ export default {
           })
           break
         case 1:
-          this.$router.push({
-            path: '/companyProfile'
-          })
           break
         case 2:
           this.$router.push({
@@ -46,6 +53,9 @@ export default {
           })
           break
         case 3:
+          this.$router.push({
+            path: '/qualification'
+          })
           break
         case 4:
           this.$router.push({

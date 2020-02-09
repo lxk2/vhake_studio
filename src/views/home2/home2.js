@@ -95,9 +95,24 @@ export default {
       switch (val) {
         case 0:
           break
+        case 1:
+          this.$router.push({
+            path: '/companyProfile'
+          })
+          break
+        case 2:
+          this.$router.push({
+            path: '/businessScope'
+          })
+          break
         case 3: // 跳转到公司资质
           this.$router.push({
             path: '/qualification'
+          })
+          break
+        case 4:
+          this.$router.push({
+            path: '/learnMore'
           })
           break
         default:

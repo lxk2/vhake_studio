@@ -14,6 +14,7 @@ export default {
         taxRate: '',
         ticketType: '',
         backTime: '',
+        followUpName: '',
         name: '',
         mobile: ''
       },
@@ -75,7 +76,7 @@ export default {
         .then(_ => {
           if (res.code === 1) {
             this.resetForm()
-            this.$router.go(-1)
+            // this.$router.go(-1)
           }
         })
     },
@@ -99,6 +100,7 @@ export default {
         taxRate: '',
         ticketType: '',
         backTime: '',
+        followUpName: '',
         name: '',
         mobile: ''
       }

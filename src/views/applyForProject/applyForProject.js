@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import { NoticeBar, Field } from 'vant'
+import { NoticeBar, Field, Cell, Calendar } from 'vant'
 
-Vue.use(NoticeBar).use(Field)
+Vue.use(NoticeBar).use(Field).use(Cell).use(Calendar)
 export default {
   data () {
     return {
@@ -9,15 +9,20 @@ export default {
         projectName: '',
         reservationPrice: '',
         applyPrice: '',
+        arrivalTime: '',
+        followUpName: '',
         name: '',
         mobile: ''
       },
-      loading: false
+      loading: false,
+      showFlag: false
     }
   },
   component: {
     NoticeBar,
-    Field
+    Field,
+    Calendar,
+    Cell
   },
   methods: {
     async submitForm () {
@@ -36,7 +41,7 @@ export default {
         .then(_ => {
           if (res.code === 1) {
             this.resetForm()
-            this.$router.go(-1)
+            // this.$router.go(-1)
           }
         })
     },
@@ -45,9 +50,29 @@ export default {
         projectName: '',
         reservationPrice: '',
         applyPrice: '',
+        arrivalTime: '',
+        followUpName: '',
         name: '',
         mobile: ''
       }
+    },
+    onConfirm (e) {
+      this.formData.arrivalTime = this.fermitTime(e)
+      this.showFlag = false
+    },
+    fermitTime (time) {
+      let now = new Date(time)
+      let year = now.getFullYear()
+      let mon = now.getMonth() + 1
+      let date = now.getDate()
+      if (mon < 10) {
+        mon = '0' + mon
+      }
+      if (date < 10) {
+        date = '0' + date
+      }
+      let postDate = year + '-' + mon + '-' + date
+      return postDate
     }
   },
   created () {

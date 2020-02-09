@@ -79,6 +79,30 @@ const routes = [
       title: '税务咨询'
     },
     component: () => import('../views/taxAdvice/index.vue')
+  },
+  {
+    path: '/companyProfile',
+    name: 'companyProfile',
+    meta: {
+      title: '公司简介'
+    },
+    component: () => import('../views/companyProfile/index.vue')
+  },
+  {
+    path: '/businessScope',
+    name: 'businessScope',
+    meta: {
+      title: '业务范围'
+    },
+    component: () => import('../views/businessScope/index.vue')
+  },
+  {
+    path: '/learnMore',
+    name: 'learnMore',
+    meta: {
+      title: '更多了解'
+    },
+    component: () => import('../views/learnMore/index.vue')
   }
 ]
 
