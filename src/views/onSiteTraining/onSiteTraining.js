@@ -13,6 +13,10 @@ export default {
   data () {
     return {
       formData: {
+        serviceType: '',
+        serviceName: '',
+        content: '',
+        projectName: '',
         safetyTraining: '',
         warningEducation: '',
         trainingTime: '',
@@ -29,15 +33,38 @@ export default {
         value: 2
       }
       ],
+      serviceTypeList: [
+        {
+          label: '安全教育',
+          value: 1
+        },
+        {
+          label: '安全视频讲座',
+          value: 2
+        },
+        {
+          label: '长期驻场服务',
+          value: 3
+        },
+        {
+          label: '其他服务',
+          value: 4
+        }
+      ],
       loading: false,
       showFlag: false,
-      showPopup: false
+      showPopup: false,
+      showPopup2: false
     }
   },
   methods: {
     onPickerConfirm (e) {
       this.formData.specificTime = e.label
       this.showPopup = false
+    },
+    onPickerConfirm2 (e) {
+      this.formData.serviceType = e.label
+      this.showPopup2 = false
     },
     onConfirm (e) {
       this.formData.trainingTime = this.fermitTime(e)
