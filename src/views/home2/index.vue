@@ -97,7 +97,7 @@
         // background: 'transparent'
       }"
     >
-      <div class="wenan">
+      <div class="wenan" @click="showFlag = false">
         <img class="img" src="@/assets/new/shuoming.png" alt="" />
       </div>
     </van-popup>
