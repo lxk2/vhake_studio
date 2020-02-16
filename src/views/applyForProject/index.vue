@@ -10,7 +10,7 @@
     <van-field label-width="110" v-model="formData.reservationPrice" type="number" label="预约工资款金额" placeholder="请输入预约工资款金额" >
       <span slot="button">元</span>
     </van-field>
-    <van-cell title-class="cell-t" label="自到账以后三个工作日后可提取" title="预约工资款时间" :value="formData.arrivalTime" @click="showFlag = true;" is-link />
+    <van-cell title-class="cell-t" label="自到账以后三个工作日后可提取" title="来款日期" :value="formData.arrivalTime" @click="showFlag = true;" is-link />
     <!-- <van-field label-width="110" v-model="formData.applyPrice" type="number" label="申请进度款" placeholder="请输入申请进度款" ></van-field> -->
     <van-field label-width="110" v-model="formData.followUpName" label="跟进业务员姓名" placeholder="请输入跟进业务员姓名" ></van-field>
     <van-field label-width="110" v-model="formData.name" label="姓名" placeholder="请输入申请人姓名" ></van-field>
@@ -18,7 +18,7 @@
     <div class="open-ccb-box">
       <div class="open-ccb" @click="submitForm">提交</div>
     </div>
-    <van-calendar title="预约工资款到账时间" v-model="showFlag" @confirm="onConfirm" />
+    <van-calendar title="选择来款时间" v-model="showFlag" @confirm="onConfirm" />
   </div>
 </template>
 

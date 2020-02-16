@@ -21,4 +21,6 @@
 
 <style lang="stylus">
 @import '~@/styles/learnMore.styl';
+video
+  width 100%
 </style>

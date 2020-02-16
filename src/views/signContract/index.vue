@@ -36,7 +36,7 @@
       title="开工日期"
       :value="formData.openDate"
       @click="
-        showFlag = true;
+        showFlag1 = true;
         currentIndex = 1;
       "
       is-link
@@ -83,7 +83,18 @@
     </div>
     <van-calendar
       :title="calendarTitle"
+      v-model="showFlag1"
+      :min-date="minDate"
+      :max-date="maxDate"
+      :default-date="new Date()"
+      @confirm="onConfirm"
+    />
+
+    <van-calendar
+      :title="calendarTitle"
       v-model="showFlag"
+      :default-date="new Date()"
+      :max-date="maxDate"
       @confirm="onConfirm"
     />
   </div>
