@@ -38,7 +38,9 @@ export default {
           value: 2
         }
       ],
-      loading: false
+      loading: false,
+      maxDate: '',
+      minDate: ''
     }
   },
   methods: {
@@ -104,10 +106,25 @@ export default {
         name: '',
         mobile: ''
       }
+    },
+    getDate () {
+      var nowdays = new Date()
+      var year = nowdays.getFullYear()
+      var month = nowdays.getMonth()
+      if (month === 0) {
+        month = 12
+        year = year - 1
+      }
+      if (month < 10) {
+        month = '0' + month
+      }
+      console.log(year, month - 1, 1)
+      this.minDate = new Date(year - 10, month - 1, 1)
+      this.maxDate = new Date(year + 10, 11, 31)
     }
   },
   created () {
-
+    this.getDate()
   },
   mounted () {
     this.loading = false
