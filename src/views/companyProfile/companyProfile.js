@@ -6,7 +6,7 @@ export default {
   data () {
     return {
       netData: {},
-      active: 1
+      active: 2
     }
   },
   methods: {

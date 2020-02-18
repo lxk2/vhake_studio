@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import { List, PullRefresh } from 'vant'
+import { List, PullRefresh, Tab, Tabs } from 'vant'
 
-Vue.use(List).use(PullRefresh)
+Vue.use(List).use(PullRefresh).use(Tab).use(Tabs)
 export default {
   data () {
     return {
@@ -10,7 +10,8 @@ export default {
       page: 1,
       list_rows: 15,
       loading: false,
-      finished: false
+      finished: false,
+      active: 1
     }
   },
   methods: {
@@ -56,12 +57,50 @@ export default {
   },
   components: {
     List,
-    PullRefresh
+    PullRefresh,
+    Tab,
+    Tabs
   },
   created () {
     this.getPageList()
   },
   mounted () {
 
+  },
+  watch: {
+    active (val) {
+      switch (val) {
+        case 0:
+          this.$router.push({
+            path: '/'
+          })
+          break
+        case 1:
+          break
+        case 2:
+          this.$router.push({
+            path: '/companyProfile'
+          })
+          break
+        case 3:
+          this.$router.push({
+            path: '/businessScope'
+          })
+          break
+        case 4: // 跳转到公司资质
+          this.$router.push({
+            path: '/qualification'
+          })
+          break
+        case 5:
+          this.$router.push({
+            path: '/learnMore'
+          })
+          break
+        default:
+          this.$toast('敬请期待...')
+          break
+      }
+    }
   }
 }

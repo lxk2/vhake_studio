@@ -5,7 +5,7 @@ Vue.use(Tab).use(Tabs).use(Divider).use(ImagePreview).use(Image)
 export default {
   data () {
     return {
-      active: 3,
+      active: 4,
       picList: []
     }
   },
