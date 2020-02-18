@@ -111,6 +111,22 @@ const routes = [
       title: '驻场培训'
     },
     component: () => import('../views/onSiteTraining/index.vue')
+  },
+  {
+    path: '/news',
+    name: 'news',
+    meta: {
+      title: '新闻资讯'
+    },
+    component: () => import('../views/news/index.vue')
+  },
+  {
+    path: '/newsDetail',
+    name: 'newsDetail',
+    meta: {
+      title: '新闻详情'
+    },
+    component: () => import('../views/newsDetail/index.vue')
   }
 ]
 

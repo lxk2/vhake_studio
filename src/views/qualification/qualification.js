@@ -46,17 +46,22 @@ export default {
           break
         case 1:
           this.$router.push({
-            path: '/companyProfile'
+            path: '/news'
           })
           break
         case 2:
           this.$router.push({
-            path: '/businessScope'
+            path: '/companyProfile'
           })
           break
         case 3:
+          this.$router.push({
+            path: '/businessScope'
+          })
           break
         case 4:
+          break
+        case 5:
           this.$router.push({
             path: '/learnMore'
           })

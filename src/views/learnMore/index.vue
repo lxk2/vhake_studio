@@ -8,6 +8,7 @@
       v-model="active"
     >
       <van-tab title="首页"></van-tab>
+      <van-tab title="新闻资讯"></van-tab>
       <van-tab title="公司简介"></van-tab>
       <van-tab title="业务范围"></van-tab>
       <van-tab title="公司资质"></van-tab>

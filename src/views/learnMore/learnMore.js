@@ -47,20 +47,25 @@ export default {
           break
         case 1:
           this.$router.push({
-            path: '/companyProfile'
+            path: '/news'
           })
           break
         case 2:
           this.$router.push({
-            path: '/businessScope'
+            path: '/companyProfile'
           })
           break
         case 3:
           this.$router.push({
-            path: '/qualification'
+            path: '/businessScope'
           })
           break
         case 4:
+          this.$router.push({
+            path: '/qualification'
+          })
+          break
+        case 5:
           break
         default:
           this.$toast('敬请期待...')

@@ -10,6 +10,7 @@
       v-model="active"
     >
       <van-tab title="首页"></van-tab>
+      <van-tab title="新闻资讯"></van-tab>
       <van-tab title="公司简介"></van-tab>
       <van-tab title="业务范围"></van-tab>
       <van-tab title="公司资质"></van-tab>
@@ -80,6 +81,33 @@
         alt=""
       />
     </div>
+
+    <!-- 新闻资讯 -->
+    <div class="new-block">
+      新闻资讯
+      <span @click="toMore">更多>></span>
+    </div>
+    <div class="new-list">
+      <div class="new-item" v-for="(item) in newsList" :key="item.id" @click="toDetail(item.id)">
+        <div class="left">
+          <div class="new-title">
+            {{ item.title }}
+          </div>
+          <div class="new-time">
+            {{ item.create_time }}
+          </div>
+        </div>
+        <div class="right">
+          <van-image
+            class="img"
+            fit="cover"
+            lazy-load
+            :src="item.pic"
+          />
+        </div>
+      </div>
+    </div>
+
     <div class="logo">
       <img
         class="img"

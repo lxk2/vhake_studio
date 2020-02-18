@@ -30,7 +30,8 @@ export default {
           subname: '',
           path: '/bookTicket'
         }
-      ]
+      ],
+      newsList: []
     }
   },
   methods: {
@@ -62,10 +63,34 @@ export default {
       this.$router.push({
         path: e.path
       })
+    },
+    async getNewsList () {
+      const res = await this.$http.post('v1.home/getNewsList', {
+        page: 1,
+        list_rows: 5
+      })
+      if (res.code === 1) {
+        this.newsList = res.data.list
+      } else {
+        this.newsList = []
+      }
+    },
+    toMore () {
+      this.$router.push({
+        path: '/news'
+      })
+    },
+    toDetail (id) {
+      this.$router.push({
+        path: '/newsDetail',
+        query: {
+          id
+        }
+      })
     }
   },
   created () {
-
+    this.getNewsList()
   },
   mounted () {
     const flag = sessionStorage.getItem('flag')
@@ -97,20 +122,25 @@ export default {
           break
         case 1:
           this.$router.push({
-            path: '/companyProfile'
+            path: '/news'
           })
           break
         case 2:
           this.$router.push({
+            path: '/companyProfile'
+          })
+          break
+        case 3:
+          this.$router.push({
             path: '/businessScope'
           })
           break
-        case 3: // 跳转到公司资质
+        case 4: // 跳转到公司资质
           this.$router.push({
             path: '/qualification'
           })
           break
-        case 4:
+        case 5:
           this.$router.push({
             path: '/learnMore'
           })
