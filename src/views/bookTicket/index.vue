@@ -12,6 +12,18 @@
       label="项目名称"
       placeholder="请输入项目名称"
     ></van-field>
+    <van-cell
+      title="服务类型"
+      :value="formData.serviceType"
+      @click="
+        showPopup2 = false;
+        showPopup = false;
+        showPopup3 = false;
+        showPopup4 = false;
+        showPopup5 = true;
+      "
+      is-link
+    />
     <van-field
       label-width="110"
       v-model="formData.clientCompanyName"
@@ -63,18 +75,7 @@
       "
       is-link
     />
-    <van-cell
-      title="服务类型"
-      :value="formData.serviceType"
-      @click="
-        showPopup2 = false;
-        showPopup = false;
-        showPopup3 = false;
-        showPopup4 = false;
-        showPopup5 = true;
-      "
-      is-link
-    />
+
     <van-cell
       title="票务类型"
       :value="formData.ticketType"
