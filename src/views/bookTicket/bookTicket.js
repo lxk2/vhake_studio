@@ -7,6 +7,9 @@ export default {
     return {
       showPopup: false,
       showPopup2: false,
+      showPopup3: false,
+      showPopup4: false,
+      showPopup5: false,
       showFlag: false,
       formData: {
         projectName: '',
@@ -16,7 +19,12 @@ export default {
         backTime: '',
         followUpName: '',
         name: '',
-        mobile: ''
+        mobile: '',
+        paymentType: '',
+        clientCompanyName: '',
+        ticketType2: '',
+        serviceType: '',
+        ticketTypeName: ''
       },
       taxRateList: [
         {
@@ -36,11 +44,45 @@ export default {
         {
           label: '工程款',
           value: 2
+        },
+        {
+          label: '其他类型',
+          value: 3
+        }
+      ],
+      paymentTypeList: [
+        {
+          label: '专户',
+          value: 1
+        },
+        {
+          label: '基本户',
+          value: 2
         }
       ],
       loading: false,
       maxDate: '',
-      minDate: ''
+      minDate: '',
+      ticketType2List: [
+        {
+          label: '专票',
+          value: 1
+        },
+        {
+          label: '普票',
+          value: 2
+        }
+      ],
+      serviceTypeList: [
+        {
+          label: '服务类',
+          value: 1
+        },
+        {
+          label: '建安类',
+          value: 2
+        }
+      ]
     }
   },
   methods: {
@@ -90,10 +132,19 @@ export default {
         case 2:
           this.formData.ticketType = e.label
           break
+        case 3:
+          this.formData.paymentType = e.label
+          break
+        case 4:
+          this.formData.ticketType2 = e.label
+          break
+        case 5:
+          this.formData.serviceType = e.label
+          break
         default:
           break
       }
-      this.showPopup = this.showPopup2 = false
+      this.showPopup = this.showPopup2 = this.showPopup3 = this.showPopup4 = this.showPopup5 = false
     },
     resetForm () {
       this.formData = {
