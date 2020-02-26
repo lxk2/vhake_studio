@@ -32,6 +32,12 @@
       label="盖章份数"
       placeholder="请输入盖章份数"
     ></van-field>
+    <van-field
+      label-width="110"
+      v-model="formData.followUpName"
+      label="跟进业务员姓名"
+      placeholder="请输入跟进业务员姓名"
+    ></van-field>
     <van-field label-width="90" v-model="formData.name" label="姓名" placeholder="请输入签约人姓名" ></van-field>
     <van-field label-width="90" v-model="formData.mobile" type="tel" label="联系方式" placeholder="请输入签约人联系方式" ></van-field>
     <div class="open-ccb-box">

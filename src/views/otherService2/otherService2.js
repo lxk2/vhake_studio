@@ -16,6 +16,7 @@ export default {
         materialName: '',
         content: '',
         servings: '',
+        followUpName: '',
         name: '',
         mobile: ''
       },
