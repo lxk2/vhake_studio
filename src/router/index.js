@@ -127,6 +127,14 @@ const routes = [
       title: '新闻详情'
     },
     component: () => import('../views/newsDetail/index.vue')
+  },
+  {
+    path: '/baoxian',
+    name: 'baoxian',
+    meta: {
+      title: '保险代购服务'
+    },
+    component: () => import('../views/baoxian/index.vue')
   }
 ]
 

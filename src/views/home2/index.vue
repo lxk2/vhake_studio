@@ -57,6 +57,23 @@
         alt=""
       />
     </div>
+
+    <div class="block">
+      <img
+        @click="
+          () => {
+            $router.push({
+              path: '/baoxian'
+            });
+          }
+        "
+        v-lazy="require('@/assets/new/baoxian.png')"
+        class="img"
+        src=""
+        alt=""
+      />
+    </div>
+
     <div class="block">
       <img
         @click="
