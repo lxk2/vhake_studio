@@ -21,7 +21,7 @@
       placeholder="请输入所在项目"
     ></van-field>
     <van-field
-      label-width="90"
+      label-width="110"
       v-model="formData.remark"
       type="textarea"
       :autosize="{
