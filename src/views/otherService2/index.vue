@@ -25,6 +25,9 @@
       label="资料内容"
       placeholder="请输入资料内容"
     ></van-field>
+    <van-cell title="资料上传" title-class="cell-t-class" value-class="cell-class">
+      <van-uploader :max-size="10 * 1024 * 1024" :max-count="6" @delete="handleDeleteFile" :preview-size="70" :multiple="true" accept=".doc,.docx,.pdf" v-model="fileList" :after-read="afterRead" :preview-full-image="false" />
+    </van-cell>
     <van-field
       label-width="90"
       v-model="formData.servings"
@@ -54,4 +57,15 @@
 
 <style lang="stylus">
 @import '~@/styles/otherService2.styl';
+.van-uploader
+  margin-top 8px
+.cell-t-class
+  flex 0.5
+.cell-class
+  flex 1.5
+  display flex
+  flex-wrap wrap
+  justify-content flex-end
+.open-ccb-box
+  margin-bottom: 24px
 </style>

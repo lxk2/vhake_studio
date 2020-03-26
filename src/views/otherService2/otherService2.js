@@ -4,10 +4,12 @@ import {
   Field,
   Cell,
   Popup,
-  Picker
+  Picker,
+  Uploader,
+  Button
 } from 'vant'
 
-Vue.use(NoticeBar).use(Field).use(Cell).use(Popup).use(Picker)
+Vue.use(NoticeBar).use(Field).use(Cell).use(Popup).use(Picker).use(Uploader).use(Button)
 export default {
   data () {
     return {
@@ -15,6 +17,7 @@ export default {
         type: '',
         materialName: '',
         content: '',
+        fileList: [],
         servings: '',
         followUpName: '',
         name: '',
@@ -38,7 +41,8 @@ export default {
       }
       ],
       showPopup: false,
-      loading: false
+      loading: false,
+      fileList: []
     }
   },
   methods: {
@@ -57,6 +61,12 @@ export default {
         return false
       }
       this.loading = true
+      this.formData.fileList = []
+      this.fileList.map(item => {
+        if (item.serverUrl) {
+          this.formData.fileList.push(item.serverUrl)
+        }
+      })
       const res = await this.$http.post('v1.home/otherService2', this.formData)
       this.loading = false
       this.$dialog.alert({
@@ -78,6 +88,34 @@ export default {
         name: '',
         mobile: ''
       }
+    },
+    afterRead (_file) {
+      _file.status = 'uploading'
+      _file.message = '上传中...'
+      const { file } = _file
+      let param = new FormData()
+      param.append('file', file)
+      this.$http.post('v1.home/upload', param, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+        .then(result => {
+          if (result.code === 1) {
+            _file.status = 'done'
+            _file.message = '上传成功'
+            _file.serverUrl = result.data
+          } else {
+            _file.status = 'done'
+            _file.message = '上传失败'
+            this.$dialog.alert({
+              message: result.msg
+            })
+          }
+        })
+    },
+    handleDeleteFile (file) {
+      console.log(file)
     }
   },
   created () {
@@ -91,6 +129,8 @@ export default {
     Field,
     Cell,
     Popup,
-    Picker
+    Picker,
+    Uploader,
+    Button
   }
 }
