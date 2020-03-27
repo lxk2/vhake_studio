@@ -26,7 +26,7 @@
       placeholder="请输入资料内容"
     ></van-field>
     <van-cell title="资料上传" title-class="cell-t-class" value-class="cell-class">
-      <van-uploader :max-size="10 * 1024 * 1024" :max-count="6" @delete="handleDeleteFile" :preview-size="70" :multiple="true" accept=".doc,.docx,.pdf" v-model="fileList" :after-read="afterRead" :preview-full-image="false" />
+      <van-uploader :max-size="10 * 1024 * 1024" :max-count="6" @delete="handleDeleteFile" :preview-size="70" :multiple="true" accept=".doc,.docx,.pdf,.xlsx,.xls" v-model="fileList" :after-read="afterRead" :preview-full-image="false" />
     </van-cell>
     <van-field
       label-width="90"
