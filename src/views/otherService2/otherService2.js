@@ -92,7 +92,7 @@ export default {
     afterRead (_file) {
       _file.status = 'uploading'
       _file.message = '上传中...'
-      const { file } = _file
+      const {file} = _file
       let param = new FormData()
       param.append('file', file)
       this.$http.post('v1.home/upload', param, {
@@ -113,9 +113,6 @@ export default {
             })
           }
         })
-    },
-    handleDeleteFile (file) {
-      console.log(file)
     }
   },
   created () {
